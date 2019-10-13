@@ -41,6 +41,11 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create update edit]
 
+  namespace :users do
+    get '/activation', to: 'notification#create'
+    get '/activation_true', to: 'notification#show'
+  end
+
   resources :tutorials, only: %i[show index] do
     resources :videos, only: %i[show index]
   end

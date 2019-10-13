@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
 
+require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 
@@ -21,6 +21,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GITHUB_USER_TOKEN>') { ENV['GITHUB_USER_TOKEN'] }
   config.filter_sensitive_data('<CLIENT_ID>') { ENV['CLIENT_ID'] }
   config.filter_sensitive_data('<CLIENT_SECRET>') { ENV['CLIENT_SECRET'] }
+  config.filter_sensitive_data('<SENDGRID_PASSWORD>') { ENV['SENDGRID_PASSWORD'] }
+  config.filter_sensitive_data('<SENDGRID_USERNAME>') { ENV['SENDGRID_USERNAME'] }
 end
 
 ActiveRecord::Migration.maintain_test_schema!
