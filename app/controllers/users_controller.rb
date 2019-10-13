@@ -17,7 +17,8 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to dashboard_path
+      flash[:notice] = "This account has not yet been activated. Please check your email."
+      redirect_to "/users/activation"
     else
       flash[:error] = @user.errors.full_messages.to_sentence
       render :new
