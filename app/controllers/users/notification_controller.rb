@@ -6,7 +6,7 @@ class Users::NotificationController < ApplicationController
   end
 
   def show
-
+    current_user.update(active: true)
   end
 
 end

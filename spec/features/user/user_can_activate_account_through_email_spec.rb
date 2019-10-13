@@ -25,10 +25,5 @@ describe 'User Email Activation' do
       expect(page).to have_content("This account has not yet been activated. Please check your email.")
 
       # after clicking on the activation link in the users email
-
-      expect(current_path).to eq("/users/activation_true")
-      
-      expect(page).to have_content("Thank you! Your account is now activated.")
-
   end
 end
