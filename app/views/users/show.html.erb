@@ -1,7 +1,7 @@
 <section class="dashboard-main">
   <section class='dashboard-top'>
     <h1> <%= current_user.first_name %>'s Dashboard </h1>
-    <h3>Active: <% current_user.active %></h3>
+    <h3>Active: <%= current_user.active %></h3>
     <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
     <h4>Account Details</h4>
       <h5><%= current_user.first_name  %> <%= current_user.last_name %></h5>
