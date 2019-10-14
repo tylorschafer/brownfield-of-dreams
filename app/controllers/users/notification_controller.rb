@@ -2,7 +2,7 @@ class Users::NotificationController < ApplicationController
 
   def create
     UserStatusMailer.activate(current_user).deliver_now
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def show

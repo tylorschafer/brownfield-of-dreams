@@ -46,6 +46,9 @@ Rails.application.routes.draw do
     get '/activation_true', to: 'notification#show'
   end
 
+  get '/invite', to: 'invite#new', as: 'invite'
+  get '/invite/create', to: 'invite#create'
+
   resources :tutorials, only: %i[show index] do
     resources :videos, only: %i[show index]
   end
