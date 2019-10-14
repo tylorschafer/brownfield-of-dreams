@@ -9,6 +9,9 @@
     <section>
       <h4>Bookmarked Segments</h4>
     </section>
+    <section>
+      <%= link_to 'Send an Invite', invite_path %>
+    </section>
   </section>
   <% if current_user.gh_token %>
     <section id= 'gh-grid'>

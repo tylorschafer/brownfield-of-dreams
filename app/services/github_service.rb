@@ -17,6 +17,10 @@ class GithubService
     get_json('/user/following')
   end
 
+  def get_email(handle)
+    get_json("/users/#{handle}/events/public")
+  end
+
   private
 
   def get_json(url)
