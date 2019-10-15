@@ -18,7 +18,7 @@ class GithubService
   end
 
   def get_email(handle)
-    get_json("/users/#{handle}/events/public")
+    get_json("/users/#{handle}")
   end
 
   private
