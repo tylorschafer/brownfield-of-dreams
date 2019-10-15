@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     return unless current_user.gh_token
 
     render locals: {
-      github_facade: UserGithubFacade.new(current_user.gh_token)
+      github_facade: GithubFacade.new(current_user.gh_token)
     }
   end
 

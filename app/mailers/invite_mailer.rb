@@ -1,8 +1,8 @@
 class InviteMailer < ApplicationMailer
 
-  def invite_send(email, sender_name, recipient_name)
+  def invite_send(user, sender_name)
     @sender_name = sender_name
-    @recipient_name = recipient_name
-    mail(to: email, subject: "#{sender_name} has sent you an Invitation")
+    @user = user
+    mail(to: @user.email, subject: "#{sender_name} has sent you an Invitation")
   end
 end
