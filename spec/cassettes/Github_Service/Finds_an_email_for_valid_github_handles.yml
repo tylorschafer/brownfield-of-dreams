@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/tylorschafer?access_token=<GITHUB_USER_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 15 Oct 2019 01:15:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - GitHub.com
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4938'
+      X-Ratelimit-Reset:
+      - '1571105104'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"6b5eeb39faf95239166e00ceb4a96e6a"
+      Last-Modified:
+      - Mon, 14 Oct 2019 17:08:54 GMT
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - F6DE:501A:2D21CE:51C83D:5DA51DA3
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"tylorschafer","id":3358870,"node_id":"MDQ6VXNlcjMzNTg4NzA=","avatar_url":"https://avatars0.githubusercontent.com/u/3358870?v=4","gravatar_id":"","url":"https://api.github.com/users/tylorschafer","html_url":"https://github.com/tylorschafer","followers_url":"https://api.github.com/users/tylorschafer/followers","following_url":"https://api.github.com/users/tylorschafer/following{/other_user}","gists_url":"https://api.github.com/users/tylorschafer/gists{/gist_id}","starred_url":"https://api.github.com/users/tylorschafer/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/tylorschafer/subscriptions","organizations_url":"https://api.github.com/users/tylorschafer/orgs","repos_url":"https://api.github.com/users/tylorschafer/repos","events_url":"https://api.github.com/users/tylorschafer/events{/privacy}","received_events_url":"https://api.github.com/users/tylorschafer/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":"tylorschafer@gmail.com","hireable":null,"bio":null,"public_repos":38,"public_gists":22,"followers":5,"following":2,"created_at":"2013-01-23T20:33:44Z","updated_at":"2019-10-14T17:08:54Z","private_gists":1,"total_private_repos":3,"owned_private_repos":3,"disk_usage":1281,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}'
+    http_version: 
+  recorded_at: Tue, 15 Oct 2019 01:15:15 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/sadpathtylor?access_token=<GITHUB_USER_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 15 Oct 2019 01:15:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - GitHub.com
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4937'
+      X-Ratelimit-Reset:
+      - '1571105104'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"e7f20991cbc7699c27c26ef9f86f1ef7"
+      Last-Modified:
+      - Mon, 14 Oct 2019 17:10:35 GMT
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - F6DF:3FE8:12525A:1E0F1A:5DA51DA3
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"sadpathtylor","id":56557280,"node_id":"MDQ6VXNlcjU2NTU3Mjgw","avatar_url":"https://avatars1.githubusercontent.com/u/56557280?v=4","gravatar_id":"","url":"https://api.github.com/users/sadpathtylor","html_url":"https://github.com/sadpathtylor","followers_url":"https://api.github.com/users/sadpathtylor/followers","following_url":"https://api.github.com/users/sadpathtylor/following{/other_user}","gists_url":"https://api.github.com/users/sadpathtylor/gists{/gist_id}","starred_url":"https://api.github.com/users/sadpathtylor/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/sadpathtylor/subscriptions","organizations_url":"https://api.github.com/users/sadpathtylor/orgs","repos_url":"https://api.github.com/users/sadpathtylor/repos","events_url":"https://api.github.com/users/sadpathtylor/events{/privacy}","received_events_url":"https://api.github.com/users/sadpathtylor/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"public_repos":0,"public_gists":0,"followers":0,"following":0,"created_at":"2019-10-14T17:10:35Z","updated_at":"2019-10-14T17:10:35Z"}'
+    http_version: 
+  recorded_at: Tue, 15 Oct 2019 01:15:16 GMT
+recorded_with: VCR 4.0.0
