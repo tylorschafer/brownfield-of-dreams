@@ -1,4 +1,4 @@
-class UserGithubFacade
+class GithubFacade
   # frozen_string_literal: true
 
   def initialize(token)
