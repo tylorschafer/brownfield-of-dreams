@@ -1,4 +1,4 @@
-class GithubUser
+class GithubUser < ApplicationRecord
   # frozen_string_literal: true
 
   attr_reader :name, :link, :picture, :email
@@ -9,4 +9,5 @@ class GithubUser
     @picture = params[:avatar_url]
     @email = params[:email]
   end
+
 end
