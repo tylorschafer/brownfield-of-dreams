@@ -23,6 +23,8 @@
 
 #  Links show up next to followings that have accounts in our database.
 #  Links do not show up next to followers or followings if they are not in our database.
+
+
 #  There's a section on the dashboard that shows all of the users that I have friended
 #  Edge Case: Make sure this fails gracefully. If you open up a POST route to create a
 #  friendship, be sure to catch the scenario where someone sends an invalid user id.
@@ -34,8 +36,34 @@ require 'rails_helper'
 describe 'User Can Have Friends' do
   it "When I login and go to " do
     josh = create(:user, gh_token: ENV['GITHUB_USER_TOKEN'])
+    diane = GithubUser.new({login: "Diane", html_url: "", avatar_url: "aljfiojaio.jpg", email: "email@email.com"} )
+    create(:user, handle: "Diane")
+    mike = GithubUser.new({login: "Mike", html_url: "", avatar_url: "aljfiojaio.jpg", email: "email3@email.com"} )
+    allow_any_instance_of(GithubFacade).to receive(:followers).and_return([diane])
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(josh)
 
-    allow_any_instance_of(GithubFacade).to_recieve(:followers).and_return(diane)
+    visit dashboard_path
 
+    within ".followers" do
+      expect(page).to have_content(diane.name)
+
+      within "#gh_user-#{mike.name}" do
+        expect(page).to_not have_link("Add as Friend")
+      end
+
+      within "#gh_user-#{diane.name}" do
+        expect(page).to have_link("Add as Friend")
+
+        click_on "Add as Friend"
+      end
+
+      expect(page).to have_css(".friends")
+
+      within ".friends" do
+        expect(page).to have_content(diane.name)
+      end
+
+    end
   end
+
 end
