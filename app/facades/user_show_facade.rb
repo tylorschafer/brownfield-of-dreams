@@ -1,4 +1,4 @@
-class GithubFacade
+class UserShowFacade
   # frozen_string_literal: true
 
   def initialize(token)
@@ -27,4 +27,11 @@ class GithubFacade
     end
   end
 
+  def find_user(name)
+    User.in_system?(name)
+  end
+
+  def user_id(name)
+    find_user(name).id
+  end
 end

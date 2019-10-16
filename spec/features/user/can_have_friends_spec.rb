@@ -35,11 +35,15 @@ require 'rails_helper'
 
 describe 'User Can Have Friends' do
   it "When I login and go to " do
-    josh = create(:user, gh_token: ENV['GITHUB_USER_TOKEN'])
-    diane = GithubUser.new({login: "Diane", html_url: "", avatar_url: "aljfiojaio.jpg", email: "email@email.com"} )
-    create(:user, handle: "Diane")
-    mike = GithubUser.new({login: "Mike", html_url: "", avatar_url: "aljfiojaio.jpg", email: "email3@email.com"} )
-    allow_any_instance_of(GithubFacade).to receive(:followers).and_return([diane])
+    josh = create(:user, gh_token: 'asdfasdfasdf')
+    diane = GithubUser.new({login: "Diane", html_url: "", avatar_url: "https://www.esds.co.in/blog/wp-content/uploads/2018/05/Mannual-Testing.jpg", email: "email@email.com"} )
+    dianes_account = create(:user, handle: "Diane")
+    mike = GithubUser.new({login: "Mike", html_url: "https://www.esds.co.in/blog/wp-content/uploads/2018/05/Mannual-Testing.jpg", avatar_url: "", email: "email3@email.com"} )
+    repo = Repo.new({ name: 'Tylors Project', html_url: 'https://www.google.com'})
+
+    allow_any_instance_of(UserShowFacade).to receive(:followers).and_return([diane, mike])
+    allow_any_instance_of(UserShowFacade).to receive(:following).and_return([diane, mike])
+    allow_any_instance_of(UserShowFacade).to receive(:repos).and_return([repo])
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(josh)
 
     visit dashboard_path
@@ -56,14 +60,12 @@ describe 'User Can Have Friends' do
 
         click_on "Add as Friend"
       end
+    end
 
-      expect(page).to have_css(".friends")
+    expect(page).to have_css(".friends")
 
-      within ".friends" do
-        expect(page).to have_content(diane.name)
-      end
-
+    within ".friends" do
+      expect(page).to have_content(dianes_account.first_name)
     end
   end
-
 end

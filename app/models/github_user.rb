@@ -1,4 +1,4 @@
-class GithubUser < ApplicationRecord
+class GithubUser
   # frozen_string_literal: true
 
   attr_reader :name, :link, :picture, :email
