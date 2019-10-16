@@ -3,6 +3,7 @@
 class User < ApplicationRecord
   has_many :user_videos
   has_many :videos, through: :user_videos
+  has_many :tutorials, through: :videos
 
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
@@ -17,4 +18,8 @@ class User < ApplicationRecord
     User.find_by(handle: name)
   end
 
+  def bookmarks_by_tutorial
+    self.tutorials
+        .order('videos.position')
+  end
 end

@@ -9,6 +9,16 @@
       <h5><%= current_user.email%></h5>
     <section class= 'bookmarks'>
       <h4>Bookmarked Segments</h4>
+      <% current_user.bookmarks_by_tutorial.each do |tutorial| %>
+        <section class= 'tutorials'>
+          <h3><%= tutorial.title %></h3>
+          <section class= 'videos'>
+            <% tutorial.videos.each do |video| %>
+              <h3><%= link_to video.title, tutorial_path(id: tutorial.id, video_id: video.id), class: "show-link", id: video.position %></h3>
+            <% end %>
+          </section>
+        </section>
+      <% end %>
     </section>
     <section>
       <%= link_to 'Send an Invite', invite_path %>

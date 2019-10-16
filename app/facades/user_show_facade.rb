@@ -6,6 +6,10 @@ class UserShowFacade
     @token = @user.gh_token
   end
 
+  def bookmarks
+    @user.bookmarks_by_tutorial
+  end
+
   def friends
     @user.friends
   end
