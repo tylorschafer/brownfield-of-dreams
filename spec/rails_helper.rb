@@ -43,6 +43,7 @@ SimpleCov.start do
   add_filter "app/jobs"
   add_filter "app/mailers/application_mailer"
   add_filter "app/controllers/application_controller"
+  add_filter "spec"
 end
 
 Shoulda::Matchers.configure do |config|

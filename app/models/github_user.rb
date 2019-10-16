@@ -9,4 +9,5 @@ class GithubUser
     @picture = params[:avatar_url]
     @email = params[:email]
   end
+
 end

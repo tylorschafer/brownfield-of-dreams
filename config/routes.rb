@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   namespace :users do
     get '/activation', to: 'notification#create'
     get '/activation_true', to: 'notification#show'
+    post '/friends', to: 'friendships#create', as: :friend
   end
 
   get '/invite', to: 'invite#new', as: 'invite'
