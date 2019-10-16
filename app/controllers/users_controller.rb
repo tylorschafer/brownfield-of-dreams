@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     return unless current_user.gh_token
 
     render locals: {
-      facade: UserShowFacade.new(current_user.gh_token)
+      facade: UserShowFacade.new(current_user)
     }
   end
 

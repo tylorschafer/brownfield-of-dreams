@@ -1,8 +1,13 @@
 class UserShowFacade
   # frozen_string_literal: true
 
-  def initialize(token)
-    @token = token
+  def initialize(user)
+    @user = user
+    @token = @user.gh_token
+  end
+
+  def friends
+    @user.friends
   end
 
   def service
