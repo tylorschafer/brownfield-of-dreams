@@ -2,8 +2,6 @@
 
 class UsersController < ApplicationController
   def show
-    return unless current_user.gh_token
-
     render locals: {
       facade: UserShowFacade.new(current_user)
     }

@@ -1,9 +1,26 @@
 class UserShowFacade
   # frozen_string_literal: true
+  attr_reader :token
 
   def initialize(user)
     @user = user
     @token = @user.gh_token
+  end
+
+  def first_name
+    @user.first_name
+  end
+
+  def last_name
+    @user.last_name
+  end
+
+  def email
+    @user.email
+  end
+
+  def active
+    @user.active
   end
 
   def bookmarks
