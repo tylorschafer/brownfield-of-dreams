@@ -5,38 +5,42 @@
     <h3>Active: <%= current_user.active %></h3>
     <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
     <h4>Account Details</h4>
-      <h5><%= current_user.first_name  %> <%= current_user.last_name %></h5>
-      <h5><%= current_user.email%></h5>
-    <section class= 'bookmarks'>
-      <h4>Bookmarked Segments</h4>
-      <% current_user.bookmarks_by_tutorial.each do |tutorial| %>
-        <section class= 'tutorials'>
-          <h3><%= tutorial.title %></h3>
-          <section class= 'videos'>
-            <% tutorial.videos.each do |video| %>
-              <h3><%= link_to video.title, tutorial_path(id: tutorial.id, video_id: video.id), class: "show-link", id: video.position %></h3>
-            <% end %>
-          </section>
-        </section>
-      <% end %>
-    </section>
-    <section>
-      <%= link_to 'Send an Invite', invite_path %>
-    </section>
+    <h5><%= current_user.first_name  %> <%= current_user.last_name %></h5>
+    <h5><%= current_user.email%></h5>
   </section>
 
-  <% if current_user.gh_token %>
   <section class= 'friends'>
-  <h3 id='gh-title'>Your Friends</h3>
+    <h3 id='gh-title'>Your Friends</h3>
     <table class= 'github'>
-    <% facade.friends.each do |friend| %>
+      <% facade.friends.each do |friend| %>
       <tr>
         <td><%= "#{friend.first_name} #{friend.last_name}" %></td>
         <td><p>Github: <%= friend.handle %></p></td>
       </tr>
-    <% end %>
-  </table>
+      <% end %>
+      <center><%= link_to 'Send an Invite', invite_path, class: "btn btn-primary mb1 bg-teal" %></center>
+    </table>
   </section>
+
+  <section class= 'bookmarks'>
+    <h3 id='gh-title'>Bookmarked Segments</h3>
+    <% current_user.bookmarks_by_tutorial.each do |tutorial| %>
+        <table class= 'bookmarks-table'>
+          <tr>
+          <th><h3><%= tutorial.title %></h3></th>
+          </tr>
+          <section class= 'bm-videos'>
+            <% tutorial.videos.each do |video| %>
+              <tr>
+                <td><h3><%= link_to video.title, tutorial_path(id: tutorial.id, video_id: video.id), class: "show-link", id: video.position %></h3></td>
+              </tr>
+            <% end %>
+          </section>
+        </table>
+      <% end %>
+  </section>
+
+  <% if current_user.gh_token %>
     <section id= 'gh-grid'>
       <h3 id='gh-title'>Github</h3>
       <section class= 'repos'>
@@ -76,8 +80,7 @@
       </table>
       </section>
     </section>
-
-    <% else %>
-      <%= link_to "Connect to Github", "/auth/github", method: :get, class: "btn btn-primary mb1 bg-teal" %>
+  <% else %>
+    <%= link_to "Connect to Github", "/auth/github", method: :get, class: "btn btn-primary mb1 bg-teal" %>
   <% end %>
 </section>

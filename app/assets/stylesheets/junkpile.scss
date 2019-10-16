@@ -73,10 +73,10 @@
 }
 
 section.tutorials {
-  margin: auto;
+  // margin: auto;
   width: 75%;
   padding: 10px;
-  height:1500px;
+  height: auto;
 }
 
 .tutorial {
@@ -87,7 +87,7 @@ section.tutorials {
   margin: auto;
   width: 75%;
   padding: 10px;
-  height:1000px;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -135,7 +135,7 @@ h4 {
 }
 
 .videos {
-  height: 1000px;
+  // height: 1000px;
 }
 
 .video {
