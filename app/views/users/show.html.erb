@@ -12,7 +12,7 @@
   <section class= 'friends'>
     <h3 id='gh-title'>Your Friends</h3>
     <table class= 'github'>
-      <% facade.friends.each do |friend| %>
+      <% current_user.friends.each do |friend| %>
       <tr>
         <td><%= "#{friend.first_name} #{friend.last_name}" %></td>
         <td><p>Github: <%= friend.handle %></p></td>

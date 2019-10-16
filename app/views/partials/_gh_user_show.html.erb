@@ -1,9 +1,9 @@
 <section id= 'gh_user-<%= user.name %>'>
   <tr>
     <td><%= image_tag user.picture, class: 'profile-image' %></td>
-    <td><p><%= link_to user.name, user.link %></p></td>
+    <td><p><%= link_to user.name, user.link %>
     <% if facade.find_user(user.name) %>
-      <td><p><%= link_to "Add as Friend", users_friend_path(friend_id: facade.user_id(user.name)), method: :post %></p></td>
+      <%= link_to "Add as Friend", users_friend_path(friend_id: facade.user_id(user.name)), class: "btn", method: :post %></p></td>
     <% end %>
   </tr>
 </section>
