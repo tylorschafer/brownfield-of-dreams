@@ -4,10 +4,10 @@ class Users::FriendshipsController < ApplicationController
     friendship = create_friendship
     if friendship.save
       current_user.reload
-      redirect_to dashboard_path
     else
-      flash[:error] = friendship.errors.full_messages_to_sentence
+      flash[:error] = friendship.errors.full_messages.to_sentence
     end
+    redirect_to dashboard_path
   end
 
   def create_friendship

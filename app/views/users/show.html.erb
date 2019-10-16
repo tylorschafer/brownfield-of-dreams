@@ -1,4 +1,5 @@
 <section class="dashboard-main">
+
   <section class='dashboard-top'>
     <h1> <%= current_user.first_name %>'s Dashboard </h1>
     <h3>Active: <%= current_user.active %></h3>
@@ -13,13 +14,18 @@
       <%= link_to 'Send an Invite', invite_path %>
     </section>
   </section>
+
   <% if current_user.gh_token %>
   <section class= 'friends'>
-    <h3>Your Friends</h3>
+  <h3 id='gh-title'>Your Friends</h3>
+    <table class= 'github'>
     <% current_user.friends.each do |friend| %>
-        <%= friend.first_name %>
-        <%= friend.last_name %>
+      <tr>
+        <td><%= "#{friend.first_name} #{friend.last_name}" %></td>
+        <td><p>Github: <%= friend.handle %></p></td>
+      </tr>
     <% end %>
+  </table>
   </section>
     <section id= 'gh-grid'>
       <h3 id='gh-title'>Github</h3>
@@ -35,6 +41,7 @@
           <% end %>
       </table>
       </section>
+
       <section class= 'followers'>
         <table class= 'github'>
           <tr>
@@ -44,8 +51,9 @@
         <%= render partial: 'partials/gh_user_show',
                    locals: {user: user, facade: facade} %>
         <% end %>
-      </table class= 'github'>
+      </table>
       </section>
+
       <section class= 'following'>
         <table class= 'github'>
           <tr>
@@ -58,6 +66,7 @@
       </table>
       </section>
     </section>
+
     <% else %>
       <%= link_to "Connect to Github", "/auth/github", method: :get, class: "btn btn-primary mb1 bg-teal" %>
   <% end %>
