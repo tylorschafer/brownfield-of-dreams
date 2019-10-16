@@ -26,4 +26,5 @@ class GithubFacade
       GithubUser.new(repo_data)
     end
   end
+
 end
