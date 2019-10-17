@@ -2,7 +2,8 @@
   width: 100%;
   margin-bottom: 20px;
   display: inline-block;
-  border-bottom: 6px outset rgba(17,59,99,0.56);
+  border-bottom: 3px outset rgba(17,59,99,0.56);
+  border-top: 3px outset rgba(17,59,99,0.56);
   padding-bottom: 20px;
   align-content: center;
   margin: 0 auto;
@@ -14,10 +15,12 @@
   width: 27%;
   margin-left: 3%;
   margin-right: 3%;
-  border: 7px inset rgba(30,88,125,0.61);
+  border: 5px inset rgba(30,88,125,0.61);
   border-radius: 21px;
   align-content: center;
   float: left;
+  height: 30%;
+  overflow: scroll;
 }
 
 .bookmarks-table td, .bookmarks-table th {
@@ -89,17 +92,21 @@
   display: inline-block;
   margin: 0 auto;
   width: 30%;
+  height: 400px;
+  overflow: scroll;
 }
 
 .following {
   float: right;
   width: 30%;
+  height: 400px;
+  overflow: scroll;
 }
 
 .friends {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   width: 100%;
-  border: 7px inset rgba(30,88,125,0.61);
+  border: 5px inset rgba(30,88,125,0.61);
   border-radius: 21px;
   align-content: center;
 }
@@ -107,6 +114,8 @@
 .friends td, .friends th {
   border: 1px solid #ddd;
   padding: 8px;
+  align-content: center;
+  vertical-align: center;
 }
 
 .friends tr:nth-child(even){background-color: #f2f2f2;}
@@ -120,6 +129,8 @@
   background: rgb(31,133,128);
   background: linear-gradient(90deg, rgba(31,133,128,1) 1%, rgba(58,113,163,1) 15%, rgba(58,143,170,1) 74%, rgba(64,168,210,1) 97%);
   color: white;
+  align-content: center;
+  vertical-align: center;
 }
 
 .friends-section {
@@ -127,13 +138,14 @@
   margin: 0 auto;
   margin-right: 3%;
   margin-top: 5%;
-
 }
 
 .github {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   width: 100%;
-  border: 7px inset rgba(30,88,125,0.61);
+  border-right: 5px inset rgba(30,88,125,0.61);
+  border-left: 5px inset rgba(30,88,125,0.61);
+  border-top: 5px inset rgba(30,88,125,0.61);
   border-radius: 21px;
   margin: 0 auto;
 }
@@ -159,6 +171,7 @@
 .repos {
   float: left;
   width: 30%;
+  height: 400px;
 }
 
 #gh-title {
@@ -173,6 +186,7 @@
   font-variant: normal;
   text-transform: none;
   text-align: center;
+  align-content: center;
 }
 
 #gh-grid {
