@@ -16,20 +16,20 @@ class User < ApplicationRecord
   has_secure_password
 
   def self.in_system?(handle)
-    User.find_by(handle: handle)
+    find_by(handle: handle)
   end
 
-  def has_friend?(handle)
+  def friend?(handle)
     friends.find_by(handle: handle)
   end
 
   def bookmarks_by_tutorial
-    self.tutorials
-        .order('videos.position')
+    tutorials
+      .order('videos.position')
   end
 
   def generate_token
-    self.update(token: SecureRandom.hex(10))
-    self.reload
+    update(token: SecureRandom.hex(10))
+    reload
   end
 end

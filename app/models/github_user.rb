@@ -1,6 +1,6 @@
-class GithubUser
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
+class GithubUser
   attr_reader :name, :link, :picture, :email
 
   def initialize(params = {})
@@ -9,5 +9,4 @@ class GithubUser
     @picture = params[:avatar_url]
     @email = params[:email]
   end
-
 end

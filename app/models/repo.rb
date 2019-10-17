@@ -1,6 +1,6 @@
-class Repo
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
+class Repo
   attr_reader :name, :html_url
 
   def initialize(params = {})

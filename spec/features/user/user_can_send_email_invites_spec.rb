@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User dashboard' do
+describe 'User dashboard', :vcr do
   describe 'Send an Invite' do
     before :each do
       @user = create(:user)
@@ -31,7 +31,7 @@ describe 'User dashboard' do
       fill_in 'Github Handle', with: 'sadpathtylor'
       click_on 'Send Invite'
 
-      expect(page).to have_content("The Github user you selected doesn't have an email address associated with their account.")
+      expect(page).to have_content("The Github user you've selected doesn't have a public email")
     end
   end
 end

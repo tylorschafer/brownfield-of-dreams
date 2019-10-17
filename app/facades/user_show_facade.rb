@@ -43,8 +43,8 @@ class UserShowFacade
     @user.friends
   end
 
-  def has_friend?(handle)
-    @user.has_friend?(handle)
+  def friend?(handle)
+    @user.friend?(handle)
   end
 
   def last_name

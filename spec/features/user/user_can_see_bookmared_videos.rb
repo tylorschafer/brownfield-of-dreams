@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User dashoard' do
+describe 'User dashoard', :vcr do
   # As a logged in user
   it 'user can see all their bookmarked videos' do
     user = create(:user)

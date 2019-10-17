@@ -1,6 +1,6 @@
-class Admin::VideosController < Admin::BaseController
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
+class Admin::VideosController < Admin::BaseController
   def create
     begin
       tutorial  = Tutorial.find(params[:tutorial_id])

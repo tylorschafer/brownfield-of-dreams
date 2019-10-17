@@ -49,7 +49,7 @@ RSpec.describe User, type: :model do
       user = create(:user)
       user.friends << friend
 
-      expect(user.has_friend?('megan')).to be_truthy
+      expect(user.friend?('megan')).to be_truthy
     end
 
     it '#generate_token creates a random secure hex string for authentication' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User Email Activation' do
+describe 'User Email Activation', :vcr do
   before :each do
     @email = 'jimbob@aol.com'
     @first_name = 'Jim'

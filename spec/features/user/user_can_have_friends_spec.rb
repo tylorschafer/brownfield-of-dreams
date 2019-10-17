@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User Can Have Friends' do
+describe 'User Can Have Friends', :vcr do
   before :each do
     @josh = create(:user, gh_token: 'asdfasdfasdf')
     @diane = GithubUser.new({login: "Diane", html_url: "", avatar_url: "https://www.esds.co.in/blog/wp-content/uploads/2018/05/Mannual-Testing.jpg", email: "email@email.com"} )

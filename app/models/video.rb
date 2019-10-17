@@ -8,18 +8,18 @@ class Video < ApplicationRecord
   validates_numericality_of :position
 
   def self.not_positioned
-    self.where(position: nil )
+    where(position: nil)
   end
 
   def return_used_placements
     tutorial
-    .videos
-    .where("id != #{self.id}")
-    .order(:position)
-    .pluck(:position)
+      .videos
+      .where("id != #{id}")
+      .order(:position)
+      .pluck(:position)
   end
 
   def update_placement
-    self.update(position: return_used_placements.max + 1)
+    update(position: return_used_placements.max + 1)
   end
 end
