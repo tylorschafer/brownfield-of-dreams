@@ -3,8 +3,8 @@
 class Repo
   attr_reader :name, :html_url
 
-  def initialize(params = {})
-    @name = params[:name]
-    @html_url = params[:html_url]
+  def initialize(paramaters = {})
+    @name = paramaters[:name]
+    @html_url = paramaters[:html_url]
   end
 end

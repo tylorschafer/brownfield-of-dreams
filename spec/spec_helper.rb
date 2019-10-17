@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require 'support/omniauth_macros'
+
 RSpec.configure do |config|
+  config.include(OmniauthMacros)
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end

@@ -8,8 +8,6 @@ class GithubController < ApplicationController
         handle: auth_hash[:info][:nickname]
       )
       redirect_to dashboard_path
-    else
-      redirect_to root_path
     end
   end
 
