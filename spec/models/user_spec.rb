@@ -51,6 +51,17 @@ RSpec.describe User, type: :model do
 
       expect(user.has_friend?('megan')).to be_truthy
     end
+
+    it '#generate_token creates a random secure hex string for authentication' do
+      user = create(:user)
+
+      expect(user.token).to be_nil
+
+      user.generate_token
+
+      expect(user.token).to be_a String
+      expect(user.token.length).to eq(20)
+    end
   end
 
   describe 'Class methods' do
