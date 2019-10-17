@@ -43,6 +43,14 @@ RSpec.describe User, type: :model do
       expect(user.bookmarks_by_tutorial[1].title).to eq(tutorial_2.title)
       expect(user.bookmarks_by_tutorial[1].videos[0].title).to eq(v3.title)
     end
+
+    it '#is_friend? finds if user has this friend' do
+      friend = create(:user, handle: 'megan')
+      user = create(:user)
+      user.friends << friend
+
+      expect(user.has_friend?('megan')).to be_truthy
+    end
   end
 
   describe 'Class methods' do

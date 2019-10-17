@@ -14,8 +14,12 @@ class User < ApplicationRecord
   enum role: %i[default admin]
   has_secure_password
 
-  def self.in_system?(name)
-    User.find_by(handle: name)
+  def self.in_system?(handle)
+    User.find_by(handle: handle)
+  end
+
+  def has_friend?(handle)
+    friends.find_by(handle: handle)
   end
 
   def bookmarks_by_tutorial

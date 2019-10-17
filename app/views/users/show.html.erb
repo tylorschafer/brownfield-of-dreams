@@ -2,32 +2,21 @@
 
   <section class='dashboard-top'>
     <h1> <%= facade.first_name %>'s Dashboard </h1>
-    <h3>Active: <%= facade.active %></h3>
-    <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
+    <h3>Account: <%= facade.active? %></h3>
+    <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn-ts" %>
     <h4>Account Details</h4>
     <h5><%= facade.first_name  %> <%= facade.last_name %></h5>
     <h5><%= facade.email%></h5>
   </section>
 
-  <section class= 'friends'>
-    <h3 id='gh-title'>Your Friends</h3>
-    <table class= 'github'>
-      <% facade.friends.each do |friend| %>
-      <tr>
-        <td><%= "#{friend.first_name} #{friend.last_name}" %></td>
-        <td><p>Github: <%= friend.handle %></p></td>
-      </tr>
-      <% end %>
-      <center><%= link_to 'Send an Invite', invite_path, class: "btn btn-primary mb1 bg-teal" %></center>
-    </table>
-  </section>
+  <%= render partial: 'partials/friends_index', locals: { facade: facade } %>
 
   <section class= 'bookmarks'>
     <h3 id='gh-title'>Bookmarked Segments</h3>
     <% facade.bookmarks.each do |tutorial| %>
         <table class= 'bookmarks-table'>
           <tr>
-          <th><h3><%= tutorial.title %></h3></th>
+          <th><%= tutorial.title %></th>
           </tr>
           <section class= 'bm-videos'>
             <% tutorial.videos.each do |video| %>

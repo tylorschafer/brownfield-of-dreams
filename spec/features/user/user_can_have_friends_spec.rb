@@ -17,6 +17,7 @@ describe 'User Can Have Friends' do
   end
 
   it "When I login and go to " do
+    expect(page).to have_css(".friends")
 
     within ".followers" do
       expect(page).to have_content(@diane.name)
@@ -32,7 +33,7 @@ describe 'User Can Have Friends' do
       end
     end
 
-    expect(page).to have_css(".friends")
+    expect(page).to_not have_link("Add as Friend")
 
     within ".friends" do
       expect(page).to have_content(@dianes_account.first_name)

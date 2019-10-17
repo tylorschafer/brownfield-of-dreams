@@ -1,0 +1,16 @@
+<section class= 'friends-section'>
+  <table class= 'friends'>
+    <tr>
+      <th>Friends</th>
+    </tr>
+    <% facade.friends.each do |friend| %>
+    <tr>
+      <td><%= link_to "#{friend.first_name} #{friend.last_name}", "https://www.github.com/#{friend.handle}" %></td>
+    </tr>
+    <% end %>
+    <tr>
+    <td><%= link_to 'Send an Invite', invite_path, class: "btn-ts" %></td>
+    </tr>
+  </table>
+  <br>
+</section>
