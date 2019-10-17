@@ -1,13 +1,5 @@
 class Admin::VideosController < Admin::BaseController
   # frozen_string_literal: true
-  def edit
-    @video = Video.find(params[:video_id])
-  end
-
-  def update
-    video = Video.find(params[:id])
-    video.update(video_params)
-  end
 
   def create
     begin
@@ -23,10 +15,6 @@ class Admin::VideosController < Admin::BaseController
   end
 
   private
-
-  def video_params
-    params.permit(:position)
-  end
 
   def new_video_params
     params.require(:video).permit(:title, :description, :video_id, :thumbnail)
