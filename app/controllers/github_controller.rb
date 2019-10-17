@@ -2,13 +2,13 @@
 
 class GithubController < ApplicationController
   def create
-    if current_user.gh_token.nil?
-      current_user.update(
-        gh_token: auth_hash[:credentials][:token],
-        handle: auth_hash[:info][:nickname]
-      )
-      redirect_to dashboard_path
-    end
+    return unless current_user.gh_token.nil?
+
+    current_user.update(
+      gh_token: auth_hash[:credentials][:token],
+      handle: auth_hash[:info][:nickname]
+    )
+    redirect_to dashboard_path
   end
 
   protected
