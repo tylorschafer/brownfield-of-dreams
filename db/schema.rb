@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_194059) do
+ActiveRecord::Schema.define(version: 2019_10_17_032344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_194059) do
     t.string "gh_token"
     t.boolean "active", default: false
     t.string "handle"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email"
   end
 
