@@ -1,5 +1,6 @@
-class Users::FriendshipsController < ApplicationController
+# frozen_string_literal: true
 
+class Users::FriendshipsController < ApplicationController
   def create
     friendship = create_friendship
     if friendship.save

@@ -1,33 +1,22 @@
 <section class="dashboard-main">
 
   <section class='dashboard-top'>
-    <h1> <%= current_user.first_name %>'s Dashboard </h1>
-    <h3>Active: <%= current_user.active %></h3>
-    <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
+    <h1> <%= facade.first_name %>'s Dashboard </h1>
+    <h3>Account: <%= facade.active? %></h3>
+    <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn-ts" %>
     <h4>Account Details</h4>
-    <h5><%= current_user.first_name  %> <%= current_user.last_name %></h5>
-    <h5><%= current_user.email%></h5>
+    <h5><%= facade.first_name  %> <%= facade.last_name %></h5>
+    <h5><%= facade.email%></h5>
   </section>
 
-  <section class= 'friends'>
-    <h3 id='gh-title'>Your Friends</h3>
-    <table class= 'github'>
-      <% current_user.friends.each do |friend| %>
-      <tr>
-        <td><%= "#{friend.first_name} #{friend.last_name}" %></td>
-        <td><p>Github: <%= friend.handle %></p></td>
-      </tr>
-      <% end %>
-      <center><%= link_to 'Send an Invite', invite_path, class: "btn btn-primary mb1 bg-teal" %></center>
-    </table>
-  </section>
+  <%= render partial: 'partials/friends_index', locals: { facade: facade } %>
 
   <section class= 'bookmarks'>
     <h3 id='gh-title'>Bookmarked Segments</h3>
-    <% current_user.bookmarks_by_tutorial.each do |tutorial| %>
+    <% facade.bookmarks.each do |tutorial| %>
         <table class= 'bookmarks-table'>
           <tr>
-          <th><h3><%= tutorial.title %></h3></th>
+          <th><%= tutorial.title %></th>
           </tr>
           <section class= 'bm-videos'>
             <% tutorial.videos.each do |video| %>
@@ -40,7 +29,7 @@
       <% end %>
   </section>
 
-  <% if current_user.gh_token %>
+  <% if facade.token %>
     <section id= 'gh-grid'>
       <h3 id='gh-title'>Github</h3>
       <section class= 'repos'>
@@ -56,10 +45,10 @@
       </table>
       </section>
 
-      <section class= 'followers'>
+      <section class= 'following'>
         <table class= 'github'>
           <tr>
-            <th colspan="2">Followers</th>
+            <th colspan="2">Following</th>
           </tr>
         <% facade.following.each do |user| %>
         <%= render partial: 'partials/gh_user_show',
@@ -68,10 +57,10 @@
       </table>
       </section>
 
-      <section class= 'following'>
+      <section class= 'followers'>
         <table class= 'github'>
           <tr>
-            <th colspan="2">Following</th>
+            <th colspan="2">Followers</th>
           </tr>
         <% facade.followers.each do |user| %>
         <%= render partial: 'partials/gh_user_show',

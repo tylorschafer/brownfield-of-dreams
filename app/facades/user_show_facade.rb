@@ -1,27 +1,30 @@
 class UserShowFacade
   # frozen_string_literal: true
+  attr_reader :token
 
   def initialize(user)
     @user = user
     @token = @user.gh_token
   end
 
+  def active?
+    @user.active == true ? 'Active' : 'Not Activated'
+  end
+
   def bookmarks
     @user.bookmarks_by_tutorial
   end
 
-  def friends
-    @user.friends
+  def email
+    @user.email
   end
 
-  def service
-    GithubService.new(@token)
+  def find_user(handle)
+    User.in_system?(handle)
   end
 
-  def repos
-    service.repos.map do |repo_data|
-      Repo.new(repo_data)
-    end.first(5)
+  def first_name
+    @user.first_name
   end
 
   def followers
@@ -36,8 +39,26 @@ class UserShowFacade
     end
   end
 
-  def find_user(name)
-    User.in_system?(name)
+  def friends
+    @user.friends
+  end
+
+  def friend?(handle)
+    @user.friend?(handle)
+  end
+
+  def last_name
+    @user.last_name
+  end
+
+  def repos
+    service.repos.map do |repo_data|
+      Repo.new(repo_data)
+    end.first(5)
+  end
+
+  def service
+    GithubService.new(@token)
   end
 
   def user_id(name)

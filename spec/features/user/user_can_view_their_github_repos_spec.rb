@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User dashboard' do
+describe 'User dashboard', :vcr do
   it "Users can see their github repos from their dashboard", :vcr do
     user = create(:user, gh_token: ENV['GITHUB_USER_TOKEN'])
 

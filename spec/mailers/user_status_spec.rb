@@ -1,11 +1,11 @@
 require "rails_helper"
 
-RSpec.describe UserStatusMailer, type: :mailer do
+RSpec.describe ActivationMailer, type: :mailer do
   describe 'activation' do
     before :each do
       @user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-      @sent_mail = UserStatusMailer.activate(@user).deliver_now
+      @sent_mail = ActivationMailer.activate(@user).deliver_now
     end
 
     it 'renders the correct subject' do

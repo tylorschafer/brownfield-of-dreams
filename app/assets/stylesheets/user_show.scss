@@ -1,0 +1,182 @@
+.bookmarks {
+  width: 100%;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-bottom: 6px outset rgba(17,59,99,0.56);
+  padding-bottom: 20px;
+  align-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bookmarks-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 27%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: 7px inset rgba(30,88,125,0.61);
+  border-radius: 21px;
+  align-content: center;
+  float: left;
+}
+
+.bookmarks-table td, .bookmarks-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: white;
+}
+
+.bookmarks-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.bookmarks-table tr:hover {background-color: #ddd;}
+
+.bookmarks-table th {
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background: rgb(31,133,128);
+  background: linear-gradient(90deg, rgba(31,133,128,1) 1%, rgba(58,113,163,1) 15%, rgba(58,143,170,1) 74%, rgba(64,168,210,1) 97%);
+}
+
+.btn-ts {
+  background: #5cb6f2;
+  background-image: -webkit-linear-gradient(top, #5cb6f2, #4d606b);
+  background-image: -moz-linear-gradient(top, #5cb6f2, #4d606b);
+  background-image: -ms-linear-gradient(top, #5cb6f2, #4d606b);
+  background-image: -o-linear-gradient(top, #5cb6f2, #4d606b);
+  background-image: linear-gradient(to bottom, #5cb6f2, #4d606b);
+  -webkit-border-radius: 41;
+  -moz-border-radius: 41;
+  border-radius: 41px;
+  font-family: Georgia;
+  color: #f5f5f5;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.btn-ts:hover {
+  background: #239dad;
+  background-image: -webkit-linear-gradient(top, #239dad, #1d9cf0);
+  background-image: -moz-linear-gradient(top, #239dad, #1d9cf0);
+  background-image: -ms-linear-gradient(top, #239dad, #1d9cf0);
+  background-image: -o-linear-gradient(top, #239dad, #1d9cf0);
+  background-image: linear-gradient(to bottom, #239dad, #1d9cf0);
+  text-decoration: none;
+}
+
+.dashboard-top {
+  padding-bottom: 20px;
+  width: 60%;
+  float: left;
+  margin: 0 auto;
+}
+
+.dashboard-main {
+  width: 100%;
+  text-align: center;
+  background-color: #fafcf9;
+  padding-bottom: 30px;
+  border: 4px outset rgba(17,59,99,0.56);
+  border-radius: 21px;
+  overflow: scroll;
+}
+
+.followers {
+  display: inline-block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.following {
+  float: right;
+  width: 30%;
+}
+
+.friends {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 7px inset rgba(30,88,125,0.61);
+  border-radius: 21px;
+  align-content: center;
+}
+
+.friends td, .friends th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.friends tr:nth-child(even){background-color: #f2f2f2;}
+
+.friends tr:hover {background-color: #ddd;}
+
+.friends th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background: rgb(31,133,128);
+  background: linear-gradient(90deg, rgba(31,133,128,1) 1%, rgba(58,113,163,1) 15%, rgba(58,143,170,1) 74%, rgba(64,168,210,1) 97%);
+  color: white;
+}
+
+.friends-section {
+  float: right;
+  margin: 0 auto;
+  margin-right: 3%;
+  margin-top: 5%;
+
+}
+
+.github {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 7px inset rgba(30,88,125,0.61);
+  border-radius: 21px;
+  margin: 0 auto;
+}
+
+.github td, .github th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.github tr:nth-child(even){background-color: #f2f2f2;}
+
+.github tr:hover {background-color: #ddd;}
+
+.github th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background: rgb(31,133,128);
+  background: linear-gradient(90deg, rgba(31,133,128,1) 1%, rgba(58,113,163,1) 15%, rgba(58,143,170,1) 74%, rgba(64,168,210,1) 97%);
+  color: white;
+}
+
+.repos {
+  float: left;
+  width: 30%;
+}
+
+#gh-title {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", tahoma;
+  font-size: 28px;
+  letter-spacing: 0.8px;
+  word-spacing: 0.8px;
+  color: #1D509E;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+}
+
+#gh-grid {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}

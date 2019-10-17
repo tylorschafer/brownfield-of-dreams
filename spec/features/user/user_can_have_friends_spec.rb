@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User Can Have Friends' do
+describe 'User Can Have Friends', :vcr do
   before :each do
     @josh = create(:user, gh_token: 'asdfasdfasdf')
     @diane = GithubUser.new({login: "Diane", html_url: "", avatar_url: "https://www.esds.co.in/blog/wp-content/uploads/2018/05/Mannual-Testing.jpg", email: "email@email.com"} )
@@ -17,6 +17,7 @@ describe 'User Can Have Friends' do
   end
 
   it "When I login and go to " do
+    expect(page).to have_css(".friends")
 
     within ".followers" do
       expect(page).to have_content(@diane.name)
@@ -32,7 +33,7 @@ describe 'User Can Have Friends' do
       end
     end
 
-    expect(page).to have_css(".friends")
+    expect(page).to_not have_link("Add as Friend")
 
     within ".friends" do
       expect(page).to have_content(@dianes_account.first_name)
